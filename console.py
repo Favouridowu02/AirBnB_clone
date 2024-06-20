@@ -9,6 +9,7 @@ class Console(cmd.Cmd):
         """
             This contains the End of File
         """
+        print("")
         return True
 
     def do_quit(self, arg):
@@ -18,6 +19,9 @@ class Console(cmd.Cmd):
         return True
 
     def emptyline(self):
+        """
+            Do nothing upon receiving an empty file
+        """
         pass
 
 
