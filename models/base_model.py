@@ -15,13 +15,13 @@ class BaseModel:
             This class sets up the public instance attributes
         """
         if kwargs:
-            date_format = '%Y-%m-%dT%H:%M:%S.%f'
+            df = '%Y-%m-%dT%H:%M:%S.%f'
             for key, value in kwargs.items():
                 if key != "__class__":
                     if key == "updated_at":
-                        self.updated_at = datetime.strptime(kwargs[key], date_format)
+                        self.updated_at = datetime.strptime(kwargs[key], df)
                     elif key == "created_at":
-                        self.created_at = datetime.strptime(kwargs[key], date_format)
+                        self.created_at = datetime.strptime(kwargs[key], df)
                     else:
                         setattr(self, key, value)
         else:
@@ -59,5 +59,3 @@ class BaseModel:
         dic["created_at"] = self.created_at.isoformat(sep='T', timespec='auto')
 
         return dic
-
-
