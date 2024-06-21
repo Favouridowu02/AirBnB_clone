@@ -1,8 +1,14 @@
 #!/usr/bin/python3
+"""
+    This Module contains the entry point of the commnad interpreter
+"""
 import cmd
 
 
 class HBNBCommand(cmd.Cmd):
+    """
+        This Class is the entry point of the command
+    """
     prompt = '(hbtn) '
 
     def do_EOF(self, line):
