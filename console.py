@@ -2,28 +2,25 @@
 import cmd
 
 
-class Console(cmd.Cmd):
+class HBNBCommand(cmd.Cmd):
     prompt = '(hbtn) '
 
     def do_EOF(self, line):
-        """
-            This contains the End of File
+        """This contains the End of File
         """
         print("")
         return True
 
     def do_quit(self, arg):
-        """
-            This is the quit command
+        """Quit command to exit the program
         """
         return True
 
     def emptyline(self):
-        """
-            Do nothing upon receiving an empty file
+        """Do nothing upon receiving an empty file
         """
         pass
 
 
 if __name__ == "__main__":
-    Console().cmdloop()
+    HBNBCommand().cmdloop()
