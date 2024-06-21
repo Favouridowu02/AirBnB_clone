@@ -48,7 +48,7 @@ class FileStorage:
         obj_dict = {}
 
         for key, value in self.__objects.items():
-            obj_dict[key] = value.to_json()
+            obj_dict[key] = value.to_dict()
         with open(self.__file_path, 'w', encoding="UTF-8") as filename:
             json.dump(obj_dict, filename)
 
@@ -57,7 +57,7 @@ class FileStorage:
             deserializes the JSON file to __objects
         """
         try:
-            with open(__file_path, 'r', encoding="UTF-8") as filename:
+            with open(self.__file_path, 'r', encoding="UTF-8") as filename:
                 new_obj = json.load(filename)
             for key, value in new_obj.items():
                 obj = self.class_dict[value['__class__']](**value)
