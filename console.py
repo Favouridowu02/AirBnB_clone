@@ -9,7 +9,7 @@ class HBNBCommand(cmd.Cmd):
     """
         This Class is the entry point of the command
     """
-    prompt = '(hbtn) '
+    prompt = '(hbnb) '
 
     def do_EOF(self, line):
         """EOF signal to exit the program."""
