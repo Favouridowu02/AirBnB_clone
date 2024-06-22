@@ -21,7 +21,7 @@ class HBNBCommand(cmd.Cmd):
         return True
 
     def emptyline(self):
-        """Do nothing upon receiving an empty file."""
+        """Do nothing upon receiving an empty line."""
         pass
 
 
