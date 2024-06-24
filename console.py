@@ -5,8 +5,11 @@
 import cmd
 from models.base_model import BaseModel
 from models import storage
+# from models.users import User
 
 
+def parse(arg):
+    cutly_braces = re.search(r"\{(.*?)\}", arg)
 class HBNBCommand(cmd.Cmd):
     """
         This Class is the entry point of the command
@@ -70,7 +73,7 @@ class HBNBCommand(cmd.Cmd):
         except NameError:
             print("** class doesn't exist **")
 
-    def do_show(self, name, obj_id):
+    def do_show(self, name=None, obj_id=None):
         """
             Usage: show <class> <id> or <class>.show(<id>)
             Prints the string representation of an instance based in
@@ -83,16 +86,20 @@ class HBNBCommand(cmd.Cmd):
         obj_dict = storage.all()
         if name is None:
             print("** class name missing **")
-        elif name not in self.__classname:
+            return None
+        if name not in self.__classname:
             print("** class doesn't exist **")
-        elif obj_id is None:
+            return None
+        if obj_id is None:
             print("** instance id missing **")
-        elif "{}.{}".format(name, obj_id) not in obj_dict.keys():
+            return None
+        key = "{}.{}".format(name, obj_id)
+        if key not in obj_dict.keys():
             print("** no instance found **")
         else:
-            print(obj_dict["{}.{}".format(name, obj_id)])
+            print(obj_dict[key])
 
-    def do_destroy(self, name, obj_id):
+    def do_destroy(self, name=None, obj_id=None):
         """
             Deletes an instance based on the class name and id
             and saves the change into the JSON file
@@ -116,7 +123,7 @@ class HBNBCommand(cmd.Cmd):
             del obj_dict["{}.{}".format(name, obj_id)]
             storage.save()
 
-    def do_all(self, name):
+    def do_all(self, name=None):
         """
             Usage: all or all <class> or <class>.all()
 
