@@ -154,10 +154,9 @@ class HBNBCommand(cmd.Cmd):
             Arguments:
                 arg: the arguments
         """
-        arg_arr = parse(arg)
         count = 0
         for obj in storage.all().values():
-            if arg1[0] == obj.__class__.__name__:
+            if arg == obj.__class__.__name__:
                 count += 1
         print(count)
 
