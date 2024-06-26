@@ -20,9 +20,3 @@ class User(BaseModel):
     password = ""
     first_name = ""
     last_name = ""
-
-    def __int__(self, *args, **kwargs):
-        """
-            This is the instantialization of the class
-        """
-        super().__init__(*args, **kwargs)
