@@ -25,4 +25,4 @@ class User(BaseModel):
         """
             This is the instantialization of the class
         """
-        uper().__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
