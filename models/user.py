@@ -3,6 +3,7 @@
     This model contains a class User that inherits from BaseModel
 """
 from models.base_model import BaseModel
+import json
 
 
 class User(BaseModel):
