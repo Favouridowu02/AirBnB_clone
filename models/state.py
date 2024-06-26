@@ -8,5 +8,8 @@ from models.base_model import BaseModel
 class State(BaseModel):
     """
         This is the State Model
+
+        Public Attributes:
+            name: the name of the state
     """
     name = ""

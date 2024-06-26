@@ -7,6 +7,9 @@ from models.base_model import BaseModel
 
 class Amenity(BaseModel):
     """
-        This the Amenity CLass
+        This the Amenity Class
+
+        Public Attributes:
+            name: the name of the Amenity
     """
     name = ""
