@@ -1,6 +1,9 @@
 #!/usr/bin/python3
+"""
+    This module contains the tests cases for the base Model
+"""
 import unittest
-import directory
+# import directory
 from datetime import datetime, timedelta
 import models.base_model as md
 from models.base_model import BaseModel

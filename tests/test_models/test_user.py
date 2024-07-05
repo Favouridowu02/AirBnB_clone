@@ -5,7 +5,7 @@ Unittest classes:
     TestUser_save
     TestUser_to_dict
 """
-import directory 
+# import directory 
 import os
 import models
 import unittest
